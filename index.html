@@ -6,40 +6,46 @@
     <title>Engr. Jahangeer Badar | Portfolio</title>
     <style>
         :root {
-            --bg-color: #0f172a;          /* Deep Navy Background */
-            --card-bg: #1e293b;        /* Slate Blue Card */
-            --accent-color: #38bdf8;     /* Electric Sky Blue Accent */
-            --text-color: #f8fafc;       /* Crisp White Text */
-            --sub-text: #94a3b8;        /* Soft Slate Subtext */
-            --border-color: #334155;    /* Border */
+            --bg-color: #0b0f19;          /* Deep Slate / Midnight Dark */
+            --card-bg: #111827;        /* Sleek Obsidian Card Background */
+            --accent-color: #06b6d4;     /* Vibrant Electric Cyan */
+            --accent-glow: rgba(6, 182, 212, 0.25);
+            --text-color: #f3f4f6;       /* Clean Off-White Text */
+            --sub-text: #9ca3af;        /* Cool Gray Subtext */
+            --border-color: #1f2937;    /* Subtle Border */
+            --border-hover: #374151;
         }
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             margin: 0;
-            padding: 30px 20px;
+            padding: 40px 20px;
             line-height: 1.6;
         }
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
         header {
             display: flex;
             align-items: center;
-            gap: 25px;
-            padding: 30px 0;
-            border-bottom: 1px solid var(--border-color);
+            gap: 30px;
+            padding: 35px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
             flex-wrap: wrap;
         }
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--accent-color);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+            box-shadow: 0 0 25px var(--accent-glow);
         }
         .header-info {
             flex: 1;
@@ -47,63 +53,85 @@
         h1 {
             color: #ffffff;
             font-size: 2.2rem;
-            margin: 0 0 5px 0;
+            margin: 0 0 6px 0;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
         .badge {
-            background: rgba(56, 189, 248, 0.15);
+            background: rgba(6, 182, 212, 0.12);
             color: var(--accent-color);
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 20px;
             font-size: 0.8rem;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-weight: 600;
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            letter-spacing: 0.5px;
         }
         .section-title {
             color: var(--accent-color);
             font-size: 1.1rem;
             margin-top: 45px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
             gap: 20px;
         }
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 22px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+        .card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -5px var(--accent-glow);
         }
         .recommendation-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-left: 4px solid var(--accent-color);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .recommendation-card:hover {
+            border-color: var(--border-hover);
+            border-left-color: var(--accent-color);
+            box-shadow: 0 8px 20px -5px var(--accent-glow);
         }
         .skills-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
         .skill-tag {
-            background: #0f172a;
-            color: #e2e8f0;
+            background: #1f2937;
+            color: #e5e7eb;
             padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.88rem;
+            border: 1px solid #374151;
             font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .skill-tag:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
         }
         .date-tag {
             color: var(--accent-color);
@@ -113,30 +141,45 @@
         }
         .btn-group {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
-            margin-top: 12px;
+            margin-top: 15px;
         }
         .cert-btn {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: rgba(56, 189, 248, 0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 18px;
+            background-color: rgba(6, 182, 212, 0.1);
             color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-            border-radius: 6px;
+            border: 1px solid rgba(6, 182, 212, 0.4);
+            border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
         .cert-btn:hover {
             background-color: var(--accent-color);
-            color: #0f172a;
+            color: #0b0f19;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+        ul.bullet-list {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+            color: var(--sub-text);
+            font-size: 0.9rem;
+        }
+        ul.bullet-list li {
+            margin-bottom: 6px;
         }
         footer {
             margin-top: 60px;
-            padding-top: 25px;
-            border-top: 1px solid var(--border-color);
+            padding: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            text-align: center;
             color: var(--sub-text);
             font-size: 0.95rem;
         }
@@ -151,44 +194,50 @@
         <header>
             <img src="profile.jpg" alt="Engr. Jahangeer Badar" class="profile-img">
             <div class="header-info">
-                <span class="badge">AVAILABLE FOR ROLES & FREELANCE</span>
+                <span class="badge">OPEN TO WORK & OPPORTUNITIES</span>
                 <h1>Engr. Jahangeer Badar</h1>
-                <p style="font-size: 1.1rem; color: var(--accent-color); font-weight: 600; margin: 5px 0;">Electronic Engineer | Industrial Automation & Process Control</p>
-                <p style="color: var(--sub-text); margin: 0; font-size: 0.95rem;">Result-oriented Electronic Engineering graduate specializing in PLC/HMI control systems, industrial automation, pharmaceutical plant utilities, cGMP/cleanroom workflows, and equipment calibration.</p>
+                <p style="font-size: 1.1rem; color: var(--accent-color); font-weight: 600; margin: 6px 0;">Electronic Engineer | Industrial Automation & Process Control</p>
+                <p style="color: var(--sub-text); margin: 0; font-size: 0.95rem;">Result-oriented Electronic Engineering graduate with hands-on internship experience at Brookes Pharma, specializing in pharmaceutical plant operations, utility maintenance, and industrial automation. Skilled in PLC/HMI control systems, equipment calibration, and cGMP/cleanroom utility workflows.</p>
             </div>
         </header>
 
-        <div class="section-title">01 / Skills & Competencies</div>
+        <div class="section-title">01 / Technical Skills & Competencies</div>
         <div class="skills-list">
+            <span class="skill-tag">Pharmaceutical Utilities & Maintenance</span>
+            <span class="skill-tag">cGMP & Cleanroom Standards</span>
+            <span class="skill-tag">Instrumentation & Equipment Calibration</span>
             <span class="skill-tag">PLC Programming & HMI Design</span>
             <span class="skill-tag">Variable Frequency Drives (VFD)</span>
             <span class="skill-tag">Control Panel Troubleshooting</span>
-            <span class="skill-tag">Instrumentation & Equipment Calibration</span>
-            <span class="skill-tag">Pharmaceutical Utilities & Maintenance</span>
-            <span class="skill-tag">cGMP & Cleanroom Standards</span>
             <span class="skill-tag">HVAC & Process Control Systems</span>
             <span class="skill-tag">Hardware-Software Integration</span>
+            <span class="skill-tag">Team Leadership & Technical Communication</span>
         </div>
 
-        <div class="section-title">02 / Selected Projects</div>
-        <div class="grid">
-            <div class="card">
-                <h3 style="margin-top:0;">AI Based Smart Ceiling Fire Detection & Extinguishing System</h3>
-                <p style="color: var(--sub-text); font-size: 0.9rem;">Designed and developed an AI-based ceiling system integrating real-time fire detection with automated response for commercial and industrial safety.</p>
-            </div>
-            <div class="card">
-                <h3 style="margin-top:0;">Industrial Automation & Control Systems</h3>
-                <p style="color: var(--sub-text); font-size: 0.9rem;">Executed control panel wiring, PLC screen layout, VFD configuration, and hardware-software integration for process systems.</p>
-            </div>
-        </div>
-
-        <div class="section-title">03 / Industrial Experience, Certificates & Evaluations</div>
+        <div class="section-title">02 / Engineering Experience, Certificates & Evaluations</div>
         
         <div class="card">
-            <span class="date-tag">Jun 18, 2026 – Jul 19, 2026 (1 Month)</span>
-            <h3 style="margin-top:0;">Industrial Automation Engineering Intern</h3>
+            <span class="date-tag">Jun 30, 2025 – Jul 28, 2025</span>
+            <h3 style="margin-top:0; color: #fff;">Engineering Intern</h3>
+            <p style="color: var(--accent-color); margin-top: -5px; font-weight: 600;">Brookes Pharma (Private) Limited, Karachi</p>
+            <ul class="bullet-list">
+                <li>Completed professional engineering training, gaining hands-on awareness of industrial equipment and utility operations.</li>
+                <li>Studied plant operations, maintenance procedures, and technical workflows within a pharmaceutical manufacturing environment.</li>
+                <li>Monitored cleanroom utilities, process control instrumentation, and HVAC system layouts to ensure cGMP compliance.</li>
+            </ul>
+            <div class="btn-group">
+                <a href="brookes-cert.jpeg" target="_blank" class="cert-btn">📄 View Internship Certificate</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="date-tag">Jun 18, 2026 – Jul 19, 2026</span>
+            <h3 style="margin-top:0; color: #fff;">Industrial Automation Engineering Intern</h3>
             <p style="color: var(--accent-color); margin-top: -5px; font-weight: 600;">AutoCon Control System Integrators, Karachi</p>
-            <p style="color: var(--sub-text); font-size: 0.9rem;">Applied PLC programming, HMI screen layout design, VFD configuration, control panel wiring, and signal testing.</p>
+            <ul class="bullet-list">
+                <li>Applied PLC programming, HMI screen layout design, and VFD configuration.</li>
+                <li>Executed control panel wiring, signal testing, and hardware-software integration.</li>
+            </ul>
             <div class="btn-group">
                 <a href="autocon-cert.pdf" target="_blank" class="cert-btn">📄 View Internship Certificate</a>
                 <a href="autocon-feedback.pdf" target="_blank" class="cert-btn">📋 View Performance Evaluation</a>
@@ -196,20 +245,13 @@
         </div>
 
         <div class="card">
-            <span class="date-tag">Jun 30, 2025 – Jul 28, 2025 (4 Weeks)</span>
-            <h3 style="margin-top:0;">Engineering Intern</h3>
-            <p style="color: var(--accent-color); margin-top: -5px; font-weight: 600;">Brookes Pharma (Private) Limited, Karachi</p>
-            <p style="color: var(--sub-text); font-size: 0.9rem;">Monitored cleanroom utilities, process control instrumentation, and HVAC system layouts for cGMP compliance.</p>
-            <div class="btn-group">
-                <a href="brookes-cert.jpeg" target="_blank" class="cert-btn">📄 View Internship Certificate</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="date-tag">May 11, 2024 – Jul 09, 2024 (2 Months)</span>
-            <h3 style="margin-top:0;">Instrument Department Intern</h3>
+            <span class="date-tag">May 11, 2024 – Jul 09, 2024</span>
+            <h3 style="margin-top:0; color: #fff;">Instrument Department Intern</h3>
             <p style="color: var(--accent-color); margin-top: -5px; font-weight: 600;">Khairpur Sugar Mills LTD, Khairpur</p>
-            <p style="color: var(--sub-text); font-size: 0.9rem;">Handled process control systems, industrial instrumentation, and sensor calibration for factory equipment maintenance.</p>
+            <ul class="bullet-list">
+                <li>Handled process control systems, industrial instrumentation, and sensor calibration.</li>
+                <li>Documented technical observations for factory equipment preventative maintenance.</li>
+            </ul>
             <div class="btn-group">
                 <a href="sugar-mills-cert.jpeg" target="_blank" class="cert-btn">📄 View Internship Certificate</a>
                 <a href="sugar-mills-feedback.jpeg" target="_blank" class="cert-btn">📋 View Employer Feedback Form</a>
@@ -217,33 +259,136 @@
         </div>
 
         <div class="card">
-            <span class="date-tag">Dec 2023 – Jan 2024 (2 Weeks)</span>
-            <h3 style="margin-top:0;">Engineering Intern</h3>
+            <span class="date-tag">Dec 22, 2023 – Jan 07, 2024</span>
+            <h3 style="margin-top:0; color: #fff;">Engineering Intern</h3>
             <p style="color: var(--accent-color); margin-top: -5px; font-weight: 600;">Hyderabad Electric Supply Company (HESCO), Hyderabad</p>
-            <p style="color: var(--sub-text); font-size: 0.9rem;">Analyzed power distribution networks, Grid Station Operations (GSO), and high-voltage electrical safety protocols.</p>
+            <ul class="bullet-list">
+                <li>Analyzed power distribution networks and Grid Station Operations (GSO).</li>
+                <li>Observed utility engineering workflows and high-voltage electrical safety protocols.</li>
+            </ul>
             <div class="btn-group">
                 <a href="hesco-cert.jpeg" target="_blank" class="cert-btn">📄 View Internship Certificate</a>
             </div>
         </div>
 
         <div class="card">
-            <span class="date-tag">Jun 2023 – Aug 2023 (8 Weeks)</span>
-            <h3 style="margin-top:0;">Design Engineering Intern</h3>
+            <span class="date-tag">Jun 01, 2023 – Aug 31, 2023</span>
+            <h3 style="margin-top:0; color: #fff;">Design Engineering Intern</h3>
             <p style="color: var(--accent-color); margin-top: -5px; font-weight: 600;">Elektro Lead (Pvt) Ltd, Karachi</p>
-            <p style="color: var(--sub-text); font-size: 0.9rem;">Assisted in design engineering tasks, circuit testing, and hardware research for electronic systems.</p>
+            <ul class="bullet-list">
+                <li>Worked in Design Engineering on circuit schematics and hardware design reviews.</li>
+                <li>Assisted engineering teams with technical documentation and design workflows.</li>
+            </ul>
             <div class="btn-group">
                 <a href="elektro-lead-cert.jpeg" target="_blank" class="cert-btn">📄 View Internship Certificate</a>
             </div>
         </div>
 
-        <div class="section-title">04 / Recommendations & Testimonials (14 Recommendations)</div>
-        
+        <div class="section-title">03 / Engineering Projects</div>
+        <div class="card">
+            <h3 style="margin-top:0; color: #fff;">AI Based Smart Ceiling-Mounted Fire Detection & Automatic Extinguishing System</h3>
+            <ul class="bullet-list">
+                <li>Designed and developed an AI-based smart ceiling system integrating real-time fire detection with an automated extinguishing mechanism.</li>
+                <li>Utilized AI algorithms and sensors for rapid hazard identification and automated response in commercial and industrial settings.</li>
+            </ul>
+        </div>
+
+        <div class="section-title">04 / Official LinkedIn Recommendations (14 Received)</div>
+
         <div class="recommendation-card">
-            <p style="font-style: italic; color: #e2e8f0; font-size: 0.95rem; margin-top:0;">"Highly dedicated internee with strong technical acumen in industrial automation, PLC control systems, and quick adaptation to engineering environments."</p>
-            <p style="margin-bottom: 0; color: var(--accent-color); font-weight: 600; font-size: 0.9rem;">— Industry Mentor & Supervisor</p>
-            <p style="margin-top: 0; color: var(--sub-text); font-size: 0.8rem;">AutoCon Control System Integrators</p>
+            <p style="font-style: italic; color: #f3f4f6; font-size: 0.95rem; margin-top:0;">"I have known Jahangeer Badar as a dedicated student from our department at MUET. Later, I had the pleasure of supervising him during his internship at AutoCon while serving as Senior Automation Engineer. Even in a short duration, Jahangeer demonstrated exceptional technical curiosity and a strong foundation in Industrial Automation, particularly in PLC programming, HMI interface design, and VFD configuration. His commitment, leadership drive, and professional approach make him an outstanding engineer. I strongly recommend him for any entry-level engineering roles."</p>
+            <p style="margin-bottom: 0; color: var(--accent-color); font-weight: 600; font-size: 0.92rem;">— Engr. Muhammad Basit 🥇🥈</p>
+            <p style="margin-top: 2px; color: var(--sub-text); font-size: 0.85rem;">Junior Manager I&C @Continental Biscuits Ltd | Ex-Senior Automation Engineer @AutoCon</p>
         </div>
 
         <div class="recommendation-card">
-            <p style="font-style: italic; color: #e2e8f0; font-size: 0.95rem; margin-top:0;">"Jahangeer has exceptional leadership and organizational skills as Founder & CEO of PEO, driving student development and impactful engineering programs."</p>
-            <p style="margin-bottom: 0; color: var(--accent-color); font-weight: 600; font-size: 0.
+            <p style="font-style: italic; color: #f3f4f6; font-size: 0.95rem; margin-top:0;">"It has been a privilege working closely with Jahangeer Badar at AutoCon. His visionary leadership, clear management style, and dedication to empowering the engineering community are truly inspiring."</p>
+            <p style="margin-bottom: 0; color: var(--accent-color); font-weight: 600; font-size: 0.92rem;">— Murtaza Hussain</p>
+            <p style="margin-top: 2px; color: var(--sub-text); font-size: 0.85rem;">Industrial Automation & Instrumentation Engineer | Instructor & Site Troubleshooter</p>
+        </div>
+
+        <div class="recommendation-card">
+            <p style="font-style: italic; color: #f3f4f6; font-size: 0.95rem; margin-top:0;">"It was a pleasure mentoring Jahangeer Badar during his HESCO internship. He showed outstanding dedication, quick technical learning, and a solid understanding of power distribution systems and field operations. Jahangeer is proactive, highly disciplined, and always ready to tackle complex practical challenges. He has a brilliant engineering mindset and will be a valuable asset to any technical team."</p>
+            <p style="margin-bottom: 0; color: var(--accent-color); font-weight: 600; font-size: 0.92rem;">— Aamir Khan</p>
+            <p style="margin-top: 2px; color: var(--sub-text); font-size: 0.85rem;">HESCO at WAPDA | Internship Mentor</p>
+        </div>
+
+        <div class="recommendation-card">
+            <p style="font-style: italic; color: #f3f4f6; font-size: 0.95rem; margin-top:0;">"Working alongside Jahangeer Badar during our HESCO internship was an incredible experience. Despite being a junior student back then, his analytical approach to grid/distribution operations and eager engineering curiosity stood out. He actively contributed to group discussions, asked insightful technical questions, and helped bridge tasks smoothly between junior and senior team members. Jahangeer is a top-tier team player with exceptional learning agility."</p>
+            <p style="margin-bottom: 0; color: var(--accent-color); font-weight: 600; font-size: 0.92rem;">— Ishfaque Ahmed</p>
+            <p style="margin-top: 2px; color: var(--sub-text); font-size: 0.85rem;">Electronics Engineer | Graduate Engineer | PEC Registered Engineer</p>
+        </div>
+
+        <div class="recommendation-card">
+            <p style="font-style: italic; color: #f3f4f6; font-size: 0.95rem; margin-top:0;">"Working with Jahangeer Badar at the Pakistan Engineering Organization (PEO) has been an exceptional experience. As the Founder & CEO, Jahangeer leads with clear vision, strategic direction, and genuine commitment to team growth. During my tenure as Managing Director, I witnessed firsthand his ability to manage operations, empower team members, and drive organizational success. He is a proactive leader, effective communicator, and a dedicated professional. I highly recommend him!"</p>
+            <p style="margin-bottom: 0; color: var(--accent-color); font-weight: 600; font-size: 0.92rem;">— Urooj Siraj</p>
+            <p style="margin-top: 2px; color: var(--sub-text); font-size: 0.85rem;">Teaching Assistant at COMSATS University Islamabad | Ex-Managing Director @PEO</p>
+        </div>
+
+        <div style="margin-top: 25px; margin-bottom: 35px; text-align: center;">
+            <a href="https://www.linkedin.com/in/jahangeer-badar/details/recommendations/" target="_blank" class="cert-btn" style="padding: 14px 28px; font-size: 0.95rem; display: inline-block;">
+                🔗 Verify All 14 Recommendations Directly on LinkedIn Profile
+            </a>
+        </div>
+
+        <div class="section-title">05 / Certifications, Training & Awards</div>
+        <div class="grid">
+            <div class="card">
+                <span class="date-tag">Sep 2024</span>
+                <h3 style="margin-top:0; color: #fff;">Roshan Kal Academy Program (10-Modules)</h3>
+                <p style="color: var(--accent-color); margin-top: -5px; font-weight: 600;">PepsiCo Pakistan & Rozee.pk</p>
+                <p style="color: var(--sub-text); font-size: 0.9rem;">Successfully completed a comprehensive 10-module professional development program focused on leadership, soft skills, and career readiness.</p>
+                <div class="btn-group">
+                    <a href="pepsico-roshan-kal.jpeg" target="_blank" class="cert-btn">📜 View Certificate</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="date-tag">Sep 27, 2024</span>
+                <h3 style="margin-top:0; color: #fff;">Guest Speaker Keynote</h3>
+                <p style="color: var(--accent-color); margin-top: -5px; font-weight: 600;">Sindh Educational Organization (SEO)</p>
+                <p style="color: var(--sub-text); font-size: 0.9rem;">Delivered a keynote session on "The Future's of Frontier of Self Confidence in Academic Success" at MUET SZAB Campus Khairpur Mirs.</p>
+                <div class="btn-group">
+                    <a href="seo-guest-speaker.jpeg" target="_blank" class="cert-btn">📜 View Certificate</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="date-tag">2024</span>
+                <h3 style="margin-top:0; color: #fff;">Best Performer on Social Media</h3>
+                <p style="color: var(--accent-color); margin-top: -5px; font-weight: 600;">Sindh Educational Organization (SEO)</p>
+                <p style="color: var(--sub-text); font-size: 0.9rem;">Awarded for exceptional performance in managing digital outreach, innovative strategy execution, and elevating the organization's online presence.</p>
+                <div class="btn-group">
+                    <a href="seo-award.jpeg" target="_blank" class="cert-btn">🏆 View Award Shield</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="date-tag">Active Member</span>
+                <h3 style="margin-top:0; color: #fff;">IEEE Student Member & Community Leader</h3>
+                <p style="color: var(--accent-color); margin-top: -5px; font-weight: 600;">IEEE Karachi Section</p>
+                <p style="color: var(--sub-text); font-size: 0.9rem;">Active member leading initiatives to bridge the gap between academia and industry for engineering graduates.</p>
+                <div class="btn-group">
+                    <a href="ieee-membership.jpeg" target="_blank" class="cert-btn">🪪 View Membership Card</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">06 / Leadership & Education</div>
+        <div class="card">
+            <h3 style="margin-top:0; color: #fff;">Founder & CEO — Pakistan Engineering Organization (PEO)</h3>
+            <p style="color: var(--sub-text); font-size: 0.9rem;">Founded a professional platform for engineering students, organizing technical webinars, career development sessions, and professional assessment courses for young engineers.</p>
+        </div>
+        <div class="card">
+            <span class="date-tag">Dec 2022 – Nov 2026</span>
+            <h3 style="margin-top:0; color: #fff;">Bachelor of Engineering in Electronic Engineering</h3>
+            <p style="color: var(--accent-color); margin-top: -5px; font-weight: 600;">Mehran University of Engineering & Technology (MUET)</p>
+            <p style="color: var(--sub-text); font-size: 0.9rem;">Focused on Industrial Automation, Control Systems, Microprocessors & Microcontrollers, Power Electronics, Instrumentation & Measurement, and Embedded Systems. Gained strong theoretical and practical knowledge in hardware-software integration, system design, and process automation.</p>
+        </div>
+
+        <footer>
+            <p style="margin:0;">Location: Korangi, Karachi | Email: <a href="mailto:engr.jahangeerbadar.ee@gmail.com">engr.jahangeerbadar.ee@gmail.com</a> | Contact: +92 300 2284838 | <a href="https://www.linkedin.com/in/jahangeer-badar" target="_blank">LinkedIn Profile</a></p>
+        </footer>
+    </div>
+</body>
+</html>
